@@ -34,6 +34,7 @@ final ItemService itemService;
         return itemService.save( new Items( itemDto ) );
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Items findItemById( @PathVariable Integer id ) throws Exception{
         Items result = itemService.findById( id);
@@ -44,6 +45,7 @@ final ItemService itemService;
         throw new Exception("Item Not Found");
     }
 
+    @CrossOrigin
     @PutMapping( "/{id}" )
     public Items update( @RequestBody ItemDto itemDto, @PathVariable Integer id )
     {
@@ -54,6 +56,7 @@ final ItemService itemService;
         return itemService.save( item );
     }
 
+    @CrossOrigin
     @DeleteMapping( "/{id}" )
     public void delete( @PathVariable Integer id )
     {
